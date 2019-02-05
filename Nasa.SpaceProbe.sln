@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Tests", "1 - Tests", "{FE7C0B20-3F12-47B8-8769-A82867AD8191}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Core", "2 - Core", "{537A4A7F-B230-4C68-84BE-5951A7C9174B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nasa.SpaceProbe.Tests", "Nasa.SpaceProbe.Tests\Nasa.SpaceProbe.Tests.csproj", "{CD261C4E-9E6C-4D74-90ED-2E497AAFED31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD261C4E-9E6C-4D74-90ED-2E497AAFED31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD261C4E-9E6C-4D74-90ED-2E497AAFED31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD261C4E-9E6C-4D74-90ED-2E497AAFED31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD261C4E-9E6C-4D74-90ED-2E497AAFED31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CD261C4E-9E6C-4D74-90ED-2E497AAFED31} = {FE7C0B20-3F12-47B8-8769-A82867AD8191}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13A5D117-1A06-4F9B-8D14-ED9320BC1BC0}
+	EndGlobalSection
+EndGlobal
