@@ -12,4 +12,8 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Nasa.SpaceProbe.Core\Nasa.SpaceProbe.Core.csproj" />
+  </ItemGroup>
+
 </Project>
