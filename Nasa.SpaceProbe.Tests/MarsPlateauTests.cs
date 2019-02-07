@@ -1,24 +1,30 @@
 ﻿namespace Nasa.SpaceProbe.Tests
 {
+    using Microsoft.Extensions.Logging;
+    using Moq;
+    using Nasa.SpaceProbe.Core.Auxiliar;
     using Nasa.SpaceProbe.Core.Entities;
     using Xunit;
 
     public class MarsPlateauTests
     {
-        public MarsPlateau MarsPlateau { get; set; }
-
+        ILogger<MarsPlateau> logger;
+        MarsPlateau marsPlateau;
 
         public MarsPlateauTests()
         {
-            MarsPlateau = new MarsPlateau();
+            logger = new Mock<ILogger<MarsPlateau>>().Object;
+            marsPlateau = new MarsPlateau(logger);
         }
 
         [Theory]
         [InlineData(5, 5)]
-        public void SetSize(int height, int width)
+        public void SetValidPlateauSize(int height, int width)
         {
-            MarsPlateau.SetSize(height, width);
-            Assert.Equal(MarsPlateau.Size, new Size(height, width));
+            marsPlateau.SetSize(height, width);
+            
+            Assert.Equal(marsPlateau.Size.Height, height);
+            Assert.Equal(marsPlateau.Size.Width, width);
         }
     }
 }

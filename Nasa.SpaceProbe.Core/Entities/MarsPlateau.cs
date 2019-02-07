@@ -1,27 +1,23 @@
 ﻿namespace Nasa.SpaceProbe.Core.Entities
 {
+    using Microsoft.Extensions.Logging;
+    using Nasa.SpaceProbe.Core.Auxiliar;
+    using Nasa.SpaceProbe.Core.Interface;
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
-    public struct Size
+    public class MarsPlateau : IMarsPlateau
     {
-        public int Height { get; set; }
-        public int Width { get; set; }
+        public readonly ILogger logger;
+        public Size Size { get; set; }
 
-        public Size(int height, int width)
+        public MarsPlateau(ILogger<MarsPlateau> logger)
         {
-            Height = height;
-            Width = width;
+            this.logger = logger;
         }
-    }
-
-    public class MarsPlateau
-    {
-        public Size Size { get; private set; }
 
         public void SetSize(int height, int width)
         {
+            if (height < 1 || width < 1) logger.LogError("Invalid Size.", height, width);
             Size = new Size(height, width);
         }
     }
