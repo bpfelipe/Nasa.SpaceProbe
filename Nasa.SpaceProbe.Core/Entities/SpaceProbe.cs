@@ -11,6 +11,7 @@
         public CardinalDirections Direction { get; set; }
         public IMarsPlateau PlateauLanded { get; set; }
         public Status Status { get; set; }
+        
 
         public void Move(List<Movements> movements)
         {
@@ -33,13 +34,13 @@
             }
         }
 
-        private void RightRotation() =>
+        public void RightRotation() =>
             Direction = Direction == CardinalDirections.West ? CardinalDirections.North : Direction += 1;
 
-        private void LeftRotation() =>
+        public void LeftRotation() =>
             Direction = Direction == CardinalDirections.North ? CardinalDirections.West : Direction -= 1;
 
-        private void MoveForward()
+        public void MoveForward()
         {
             var nextPosition = new Position(Position.XAxis, Position.YAxis);
             switch (Direction)
@@ -62,7 +63,7 @@
             if (IsValidPlateauPosition(PlateauLanded, nextPosition))
                 Position = nextPosition;
             else
-                throw new InvalidOperationException("Invalid Move Location!");
+                Console.WriteLine("SpaceProbe - Invalid Move Location!");
         }
 
         public void Land(IMarsPlateau plateau, Position position, CardinalDirections direction)
@@ -73,6 +74,10 @@
                 Direction = direction;
                 PlateauLanded = plateau;
                 Status = Status.Landed;
+            }
+            else
+            {
+                Console.WriteLine("SpaceProbe - Invalid Land Location!");
             }
         }
 
