@@ -7,3 +7,4 @@ Implemented core functionalities in .Net Core.
 
 # Next Steps
 
+See <a href="https://docs-beta.requarks.io/install/requirements" rel="nofollow">Project Board</a> to track the progress
